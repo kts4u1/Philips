@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT=${1:-output/philips_south_engineers.mp4}
-ffmpeg -hide_banner -loglevel warning -stats -y \
+ffmpeg -hide_banner -loglevel warning -nostats -y \
   -framerate 30 -i output/frames/f%05d.jpg -i output/audio.wav \
   -map 0:v -map 1:a \
   -c:v libx264 -preset slow -crf "${CRF:-22}" -pix_fmt yuv420p -profile:v high -movflags +faststart \
