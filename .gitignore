@@ -1,6 +1,8 @@
 node_modules/
 video/assets/tiles/
 video/output/frames/
+video/output/frames_*/
 video/output/tiles.txt
 video/output/audio.wav
 video/output/render.log
+video/output/render_*.log

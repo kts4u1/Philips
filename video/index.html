@@ -124,12 +124,12 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
 .team .nm{left:114px;top:432px;font-size:128px;font-weight:900;letter-spacing:-.03em;line-height:1}
 .team .ko{left:120px;top:588px;font-size:36px;font-weight:700;color:var(--c)}
 .team .ko span{color:#fff}
-.team .ds{left:120px;top:666px;font-size:32px;font-weight:500;color:#d5e2fa;line-height:1.6}
+.team .ds{left:120px;top:666px;width:660px;font-size:32px;font-weight:500;color:#d5e2fa;line-height:1.6}
 .team .bar{left:120px;top:648px;width:90px;height:4px;background:var(--c);border-radius:2px;transform-origin:left}
 .team .cards{left:800px;top:0;width:1060px;height:1080px;display:flex;align-items:center;justify-content:center;gap:38px;padding-top:40px}
 .card{width:310px;height:450px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.04));
   border:1.5px solid rgba(255,255,255,.18);display:flex;flex-direction:column;align-items:center;padding-top:46px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.card .cn{font-size:50px;font-weight:800;margin-top:40px;letter-spacing:.02em}
+.card .cn{font-size:50px;font-weight:800;margin-top:40px;letter-spacing:.02em;white-space:nowrap}
 .card .cr{font-size:22px;font-weight:700;color:var(--c);margin-top:8px;letter-spacing:.06em}
 .card .co{font-size:20px;font-weight:500;color:var(--mute);margin-top:4px}
 .card.solo{width:360px;height:500px}
@@ -156,10 +156,10 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
 #hospital .s1{font-size:31px;font-weight:500;color:#cfdcf5;line-height:1.6;margin-top:28px}
 #hospital .s2{left:120px;top:800px;font-size:44px;font-weight:800}
 #hospital .s2 b{color:var(--sky)}
-.stc{position:absolute;top:300px;width:225px;padding:18px 18px 16px;border-radius:20px;background:rgba(8,22,52,.92);border:2px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:8px}
+.stc{position:absolute;top:300px;width:230px;padding:16px 16px 14px;border-radius:20px;background:rgba(8,22,52,.92);border:2px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:8px}
 .stc .row{display:flex;align-items:center;gap:12px}
 .stc svg{width:46px;height:46px;color:var(--c);flex:none}
-.stc .sn{font-size:30px;font-weight:800}
+.stc .sn{font-size:26px;font-weight:800;white-space:nowrap}
 .stc .ss{display:flex;align-items:center;gap:8px;font-size:21px;font-weight:700;color:var(--green)}
 .stc .ss i{width:12px;height:12px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
 .stc.err{border-color:#ff5a5f;background:rgba(70,10,18,.92)}
@@ -201,7 +201,7 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
 .lamp b{position:absolute;left:-150px;top:-130px;width:320px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,140,.55),rgba(255,214,140,0))}
 .pool{position:absolute;top:850px;width:420px;height:120px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,214,140,.22),rgba(255,214,140,0))}
 .car{left:520px;top:688px;width:520px;height:192px}
-.beam{left:1010px;top:720px;width:820px;height:200px;background:linear-gradient(90deg,rgba(255,246,200,.55),rgba(255,246,200,0));clip-path:polygon(0 38%,100% 0,100% 100%,0 62%)}
+.beam{left:1012px;top:696px;width:820px;height:200px;background:linear-gradient(90deg,rgba(255,246,200,.55),rgba(255,246,200,0));clip-path:polygon(0 38%,100% 0,100% 100%,0 62%)}
 .speed{position:absolute;height:3px;border-radius:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5))}
 #night .dtxt{left:120px;top:130px}
 #night .dtxt .tm{display:inline-block;padding:10px 22px;border-radius:12px;background:var(--blue);font-size:32px;font-weight:800;letter-spacing:.06em}
@@ -262,6 +262,25 @@ html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
 #outro .fin .s span{display:inline-block;color:#fff;font-weight:800;background:var(--blue);padding:4px 18px;border-radius:10px;margin-right:14px}
 #outro .fin .th{font-size:30px;font-weight:600;color:var(--mute);margin-top:44px}
 #black{background:#000;pointer-events:none}
+
+/* English layout */
+.lang-en #leader .nm span{font-size:34px}
+.lang-en .team .ko{font-size:34px}
+.lang-en .mini .mn{line-height:1.12;text-align:center}
+.lang-en .mini .mn .g,.lang-en .mini .mn .s{display:block}
+.lang-en .group .mini .mn{font-size:30px}
+.lang-en .panel .mini .mn{font-size:21px;margin-top:10px}
+.lang-en #outro .ldin .n span{font-size:26px}
+.lang-en #hospital .h1{font-size:68px;line-height:1.18}
+.lang-en #hospital .s1{font-size:30px}
+.lang-en #hospital .s2{top:752px;line-height:1.3}
+.lang-en .phone .cd{font-size:21px}
+.lang-en #night .dtxt .h{font-size:96px}
+.lang-en #holidays .ttl{font-size:60px}
+.lang-en #holidays .ttl span{margin:0 10px}
+.lang-en .cal .mb{font-size:27px;letter-spacing:.06em}
+.lang-en .cal .hn{font-size:29px}
+.lang-en #always .big .u{font-size:70px}
 </style>
 </head>
 <body>

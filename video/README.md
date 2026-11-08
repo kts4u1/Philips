@@ -2,7 +2,10 @@
 
 필립스 직원들에게 CC&J 지사의 대전사무소와 광주사무소 엔지니어를 소개하는 약 3분(1920×1080, 30fps) 길이의 영상입니다.
 
-완성본: `output/philips_ccj_engineers.mp4`
+완성본
+
+- 한국어: `output/philips_ccj_engineers.mp4`
+- 영어: `output/philips_ccj_engineers_en.mp4`
 
 ## 구성 (타임라인)
 
@@ -25,6 +28,9 @@
 
 이름, 팀, 문구, 위치, 장면 시간은 모두 `config.json`에 있습니다.
 
+- 한국어 화면 문구: `text`
+- 영어 버전: `en` — `names`(영문 이름), `data`(팀 설명 · 사무소 이름/주소 · 직함), `text`(화면 문구)
+
 - **사진 넣기**: `photos/` 폴더에 사진을 넣고 `config.json`의 `"photos"`에 이름과 파일 경로를 적으면 실루엣 대신 사진이 들어갑니다.
   ```json
   "photos": { "장재훈": "photos/jang-jaehoon.jpg", "이준": "photos/lee-jun.jpg" }
@@ -37,7 +43,8 @@
 ## 다시 만들기
 
 ```bash
-./scripts/build.sh
+./scripts/build.sh      # 한국어
+./scripts/build.sh en   # 영어
 ```
 
 순서대로 다음을 실행합니다.
@@ -48,7 +55,7 @@
 4. `scripts/render.js` — 헤드리스 Chromium으로 프레임 렌더링 (`index.html` + `main.js`)
 5. `scripts/encode.sh` — ffmpeg로 MP4 인코딩
 
-브라우저에서 미리보기: `video/` 폴더를 정적 서버로 띄우고 `index.html?play` (특정 시점부터는 `index.html?play&t=90`).
+브라우저에서 미리보기: `video/` 폴더를 정적 서버로 띄우고 `index.html?play` (특정 시점부터는 `index.html?play&t=90`, 영어는 `&lang=en` 추가).
 
 ## 사용한 자료
 

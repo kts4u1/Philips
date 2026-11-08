@@ -2,6 +2,7 @@
 //   node scripts/render.js --collect tiles.txt          list map tiles the camera needs
 //   node scripts/render.js --stills 5,40.5,90 --out dir  save single preview frames
 //   node scripts/render.js --out frames [--workers 4] [--from 0] [--to N]   all frames as JPEG
+//   add --lang en for the English version (default: ko)
 const { chromium } = require('playwright');
 const http = require('http');
 const fs = require('fs');
@@ -10,6 +11,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(`--${k}`); return i >= 0 ? argv[i + 1] : d; };
+const LANG = arg('lang', 'ko');
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'application/json', '.woff2': 'font/woff2', '.jpg': 'image/jpeg', '.png': 'image/png', '.wav': 'audio/wav' };
 
 function serve() {
@@ -33,7 +35,7 @@ async function openPage(browser, port) {
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
   page.on('pageerror', (e) => console.error('pageerror:', e.message));
   page.on('console', (m) => { if (m.type() === 'error') console.error('console:', m.text()); });
-  await page.goto(`http://127.0.0.1:${port}/index.html`);
+  await page.goto(`http://127.0.0.1:${port}/index.html?lang=${LANG}`);
   await page.waitForFunction(() => window.ready === true, null, { timeout: 60000 });
   return page;
 }
@@ -52,7 +54,7 @@ async function openPage(browser, port) {
     await b.close(); srv.close(); return;
   }
 
-  const out = path.resolve(arg('out', path.join(ROOT, 'output', 'frames')));
+  const out = path.resolve(arg('out', path.join(ROOT, 'output', LANG === 'ko' ? 'frames' : `frames_${LANG}`)));
   fs.mkdirSync(out, { recursive: true });
 
   if (arg('stills')) {

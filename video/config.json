@@ -256,5 +256,269 @@
       }
     },
     "photos": {}
+  },
+  "text": {
+    "km": "약 {km}km",
+    "introChip": "대전사무소 &amp; 광주사무소",
+    "introHead": [
+      "보이지 않는 곳에서,",
+      "환자 곁을 지키는 사람들"
+    ],
+    "introSub": "FIELD SERVICE ENGINEERS OF PHILIPS {REGION_UP}",
+    "ovSub": "대전사무소 · 광주사무소",
+    "stats": [
+      [
+        "",
+        "사무소"
+      ],
+      [
+        "명",
+        "엔지니어"
+      ],
+      [
+        "개",
+        "모달리티"
+      ]
+    ],
+    "engCount": "엔지니어 <b>{n}명</b>",
+    "leaderCap": "대전과 광주, <b>{n}명의 엔지니어</b>를 이끄는 리더",
+    "teamLine": "{team}팀 · <span>엔지니어 {n}명</span>",
+    "groupKicker": "{en} · {building}",
+    "groupTitle": "{office} 엔지니어 <b>{n}인</b>",
+    "statusOk": "정상 가동",
+    "statusErr": "장애 발생!",
+    "hospKicker": "WHY WE ARE ALWAYS READY",
+    "hospH1": "병원 장비가 멈추면,<br><b>진료도 멈춥니다.</b>",
+    "hospS1": "응급실 · 수술실 · 영상의학과<br>장비 뒤에는 언제나 환자가 있습니다.",
+    "hospS2": "그래서 우리는, <b>언제나 대기합니다.</b>",
+    "clock12h": false,
+    "clockNight": "밤",
+    "clockDawn": "새벽",
+    "clockCap": "모두가 잠든 새벽에도",
+    "oncallKicker": "ON-CALL 24/7",
+    "oncallH": "<b>24시간</b><br>콜 대기",
+    "oncallS": "전화 한 통이면,<br>바로 출발합니다.",
+    "phoneBadge": "긴급 장애 콜",
+    "phoneBadgeOn": "통화 연결됨",
+    "phoneCaller": "○○병원 영상의학과",
+    "phoneDetail": "CT 촬영 중 장비 오류<br>현장 지원 요청",
+    "phoneInCall": "통화 중 · 00:{ss}",
+    "driveTime": "AM 03:{mm}",
+    "driveH": "병원으로 출동",
+    "driveS": "환자가 기다리는 곳으로, 가장 먼저 달려갑니다.",
+    "holTitle": [
+      "공휴일에도,",
+      "연휴에도,",
+      "명절에도"
+    ],
+    "holidays": [
+      {
+        "m": "1월",
+        "s": "JAN",
+        "d": "1",
+        "n": "신정"
+      },
+      {
+        "m": "음력 1월",
+        "s": "",
+        "d": "1",
+        "n": "설날 연휴"
+      },
+      {
+        "m": "5월",
+        "s": "MAY",
+        "d": "5",
+        "n": "어린이날"
+      },
+      {
+        "m": "음력 8월",
+        "s": "",
+        "d": "15",
+        "n": "추석 연휴"
+      },
+      {
+        "m": "12월",
+        "s": "DEC",
+        "d": "25",
+        "n": "성탄절"
+      }
+    ],
+    "stampBig": "출동",
+    "stampBigSize": 58,
+    "stampSmall": "ON CALL",
+    "holCap": "부르면 <b>달려갑니다.</b>",
+    "holCap2": "연휴에도 장비가 멈추면, 그곳이 바로 우리의 현장입니다.",
+    "days": "일",
+    "hours": "시간",
+    "alwaysS": "멈추지 않는 현장, Philips {REGION} 엔지니어",
+    "alwaysS2": "오늘도 대전과 광주의 병원을 지키고 있습니다.",
+    "outroTitle": "대전 · 광주 사무소",
+    "outroTag": "환자 곁의 장비가 멈추지 않도록,<br>오늘도 현장을 지키는 사람들 — <b>우리가 Philips {REGION}입니다.</b>",
+    "finSub": "대전사무소 &amp; 광주사무소",
+    "finThanks": "함께 일하는 동료들을 응원해 주세요!"
+  },
+  "en": {
+    "names": {
+      "이준": "June Lee",
+      "장재훈": "JaeHun Jang",
+      "심혁인": "HyeokIn Sim",
+      "허기태": "GiTae Heo",
+      "김남준": "NamJoon Kim",
+      "박강규": "KangKyu Park",
+      "이기정": "GiJung Lee",
+      "김희중": "HeeJung Kim",
+      "장영민": "YeongMin Jang",
+      "신연섭": "YeonSeob Shin",
+      "설대왕": "DaeWang Seol",
+      "최진혁": "JinHyok Choi",
+      "강건욱": "GeonWook Kang",
+      "이휘준": "HwiJun Lee",
+      "김태수": "TaeSu Kim",
+      "김상현": "SangHyun Kim",
+      "윤명혁": "MyeongHyeok Yoon"
+    },
+    "data": {
+      "leader": {
+        "title": "Team Leader",
+        "role": "General Manager, Daejeon &amp; Gwangju Offices"
+      },
+      "modalities": {
+        "xray": {
+          "desc": [
+            "Installs and maintains digital X-ray",
+            "From routine checks to urgent repairs"
+          ]
+        },
+        "ct": {
+          "desc": [
+            "CT installation and preventive maintenance",
+            "Rapid on-site response to breakdowns"
+          ]
+        },
+        "mr": {
+          "desc": [
+            "MRI systems and superconducting magnets",
+            "Meticulous, right down to helium"
+          ]
+        },
+        "us": {
+          "desc": [
+            "Ultrasound inspection and repair",
+            "Probe care, software upgrades — even AI"
+          ]
+        }
+      },
+      "offices": {
+        "dj": {
+          "name": "Daejeon Office",
+          "city": "Daejeon",
+          "building": "Hongin Tower Officetel",
+          "area": "Bongmyeong-dong, Yuseong-gu, Daejeon"
+        },
+        "gj": {
+          "name": "Gwangju Office",
+          "city": "Gwangju",
+          "building": "The Work Coworking Office",
+          "area": "Sangmu District, Seo-gu, Gwangju"
+        }
+      }
+    },
+    "text": {
+      "km": "≈ {km} km",
+      "introChip": "Daejeon &amp; Gwangju Offices",
+      "introHead": [
+        "Working behind the scenes,",
+        "always by the patient's side"
+      ],
+      "ovSub": "Daejeon Office · Gwangju Office",
+      "stats": [
+        [
+          "",
+          "Offices"
+        ],
+        [
+          "",
+          "Engineers"
+        ],
+        [
+          "",
+          "Modalities"
+        ]
+      ],
+      "engCount": "<b>{n}</b> Engineers",
+      "leaderCap": "Leading <b>{n} engineers</b> across Daejeon &amp; Gwangju",
+      "teamLine": "{team} Team · <span>{n} Engineer{s}</span>",
+      "groupKicker": "{en} · {buildingUp}",
+      "groupTitle": "{office} · <b>{n} Engineers</b>",
+      "statusOk": "Operational",
+      "statusErr": "System down!",
+      "hospH1": "When hospital<br>equipment stops,<br><b>care stops too.</b>",
+      "hospS1": "ER · Operating Room · Radiology<br>Behind every machine, there is a patient.",
+      "hospS2": "That's why we are<br><b>always on standby.</b>",
+      "clock12h": true,
+      "clockNight": "PM",
+      "clockDawn": "AM",
+      "clockCap": "While the city sleeps",
+      "oncallH": "<b>24/7</b><br>On Call",
+      "oncallS": "One phone call,<br>and we're on our way.",
+      "phoneBadge": "URGENT CALL",
+      "phoneBadgeOn": "CONNECTED",
+      "phoneCaller": "○○ Hospital",
+      "phoneDetail": "Radiology Dept.<br>CT error during a scan<br>On-site support needed",
+      "phoneInCall": "On call · 00:{ss}",
+      "driveTime": "3:{mm} AM",
+      "driveH": "Rushing to the hospital",
+      "driveS": "First to arrive, wherever patients are waiting.",
+      "holTitle": [
+        "Public holidays,",
+        "long weekends,",
+        "even festive seasons"
+      ],
+      "holidays": [
+        {
+          "m": "JANUARY",
+          "s": "",
+          "d": "1",
+          "n": "New Year's Day"
+        },
+        {
+          "m": "LUNAR JAN",
+          "s": "",
+          "d": "1",
+          "n": "Lunar New Year"
+        },
+        {
+          "m": "MAY",
+          "s": "",
+          "d": "5",
+          "n": "Children's Day"
+        },
+        {
+          "m": "LUNAR AUG",
+          "s": "",
+          "d": "15",
+          "n": "Chuseok"
+        },
+        {
+          "m": "DECEMBER",
+          "s": "",
+          "d": "25",
+          "n": "Christmas"
+        }
+      ],
+      "stampBig": "ON CALL",
+      "stampBigSize": 30,
+      "stampSmall": "DISPATCHED",
+      "holCap": "When you call, <b>we come running.</b>",
+      "holCap2": "If equipment goes down on a holiday, that's where you'll find us.",
+      "days": "days",
+      "hours": "hours",
+      "alwaysS": "Always on the job — Philips {REGION} Engineers",
+      "alwaysS2": "Keeping hospitals in Daejeon and Gwangju running, every day.",
+      "outroTitle": "Daejeon &amp; Gwangju Offices",
+      "outroTag": "Keeping the equipment by every patient's side running —<br><b>we are Philips {REGION}.</b>",
+      "finSub": "Daejeon &amp; Gwangju Offices",
+      "finThanks": "Let's cheer on our colleagues!"
+    }
   }
 }
