@@ -2,7 +2,7 @@
 # Joins rendered frames and the soundtrack into the final MP4.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-OUT=${1:-output/philips_south_engineers.mp4}
+OUT=${1:-output/philips_ccj_engineers.mp4}
 ffmpeg -hide_banner -loglevel warning -nostats -y \
   -framerate 30 -i output/frames/f%05d.jpg -i output/audio.wav \
   -map 0:v -map 1:a \

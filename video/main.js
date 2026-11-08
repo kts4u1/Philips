@@ -1,5 +1,5 @@
 'use strict';
-// Philips South engineers video. Every frame is a pure function of time:
+// Philips CC&J engineers video. Every frame is a pure function of time:
 // renderAt(t) sets the whole stage for second t, so the recorder can step frame by frame.
 (async function () {
   const W = 1920, H = 1080;
@@ -45,6 +45,8 @@
   const S = cfg.scenes, CAM = cfg.cam, CUE = cfg.cues, D = cfg.data;
   const MOD = D.modalities, OFF = D.offices;
   const PHOTOS = D.photos || {};
+  const esc = (v) => String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const REGION = esc(D.region), REGION_UP = esc(D.region.toUpperCase());
   await Promise.all([400, 500, 600, 700, 800, 900].map((w) => document.fonts.load(`${w} 40px Pretendard`, '가나다라 ABC 123')));
 
   // ---------- icons ----------
@@ -255,7 +257,7 @@
   const spin = (o) => el(`<div class="spin a"><div class="sp-ring"></div><div class="sp-dot"></div><div class="sp-label">${o.name}</div></div>`);
   const pinSvg = '<svg viewBox="0 0 80 108"><path d="M40 4C20 4 4 19.6 4 39.2 4 66 40 104 40 104s36-38 36-64.8C76 19.6 60 4 40 4z" fill="#0B5ED7" stroke="#fff" stroke-width="5"/><circle cx="40" cy="39" r="13" fill="#fff"/></svg>';
   const bpin = (o) => el(`<div class="bpin a"><div class="bp-ring"></div><div class="bp-ring"></div><div class="bp-ring"></div><div class="bp-shadow"></div><div class="bp-pin">${pinSvg}</div>
-    <div class="bp-card"><div class="bp-k">PHILIPS ${D.region.toUpperCase()}</div><div class="bp-name">${o.name}</div><div class="bp-bld">${o.building}</div><div class="bp-area">${o.area}</div></div></div>`);
+    <div class="bp-card"><div class="bp-k">PHILIPS ${REGION_UP}</div><div class="bp-name">${o.name}</div><div class="bp-bld">${o.building}</div><div class="bp-area">${o.area}</div></div></div>`);
   const PIN = { sdj: spin(OFF.dj), sgj: spin(OFF.gj), bdj: bpin(OFF.dj), bgj: bpin(OFF.gj) };
   Object.values(PIN).forEach((p) => pins.appendChild(p));
   const hud = el(`<div id="hud" class="a"><div class="hud-k"><i></i><span class="k">NAVIGATING TO</span></div><div class="hud-name"></div><div class="hud-coord"></div><div class="hud-alt"><span>ALTITUDE</span><b></b></div></div>`);
@@ -335,9 +337,9 @@
       ph += `<div class="pt" style="width:${p.s}px;height:${p.s}px"></div>`;
     }
     const root = addScene(S.intro, `<div class="scene" id="intro"><div class="a bg"></div><div class="a glow"></div><div class="a pts">${ph}</div>
-      <div class="a top"><div class="wm">PHILIPS</div><div class="line"></div><div class="ichip"><span>${D.region}</span>대전사무소 &amp; 광주사무소</div></div>
+      <div class="a top"><div class="wm">PHILIPS</div><div class="line"></div><div class="ichip"><span>${REGION}</span>대전사무소 &amp; 광주사무소</div></div>
       <div class="a head"><div class="ln"><span>보이지 않는 곳에서,</span></div><div class="ln"><span>환자 곁을 지키는 사람들</span></div></div>
-      <div class="a sub">FIELD SERVICE ENGINEERS OF PHILIPS SOUTH</div></div>`, (t) => {
+      <div class="a sub">FIELD SERVICE ENGINEERS OF PHILIPS ${REGION_UP}</div></div>`, (t) => {
       const ptEls = $$('.pt', root);
       parts.forEach((p, i) => tf(ptEls[i], p.x + Math.sin(t * 0.5 + p.f) * 20, ((p.y - t * p.v) % H + H) % H, 1, p.a * (0.6 + 0.4 * Math.sin(t * 2 + p.f))));
       tf($('.glow', root), Math.sin(t * 0.4) * 80, Math.cos(t * 0.3) * 30, 1 + 0.06 * Math.sin(t * 0.5), 1);
@@ -358,7 +360,7 @@
   {
     const stats = [[2, '', '사무소'], [NALL, '명', '엔지니어'], [4, '개', '모달리티']];
     const root = addScene([S.overview[0], S.overview[1] + 0.4], `<div class="scene" id="overview"><div class="a shade"></div>
-      <div class="a t1 kicker">OUR REGION</div><div class="a t2">Philips ${D.region}</div><div class="a t3">대전사무소 · 광주사무소</div>
+      <div class="a t1 kicker">OUR REGION</div><div class="a t2">Philips ${REGION}</div><div class="a t3">대전사무소 · 광주사무소</div>
       <div class="a stats">${stats.map((s) => `<div class="stat"><div class="n"><span>0</span><em>${s[1]}</em></div><div class="l">${s[2]}</div></div>`).join('')}</div>
       <div class="a chips">${Object.keys(MOD).map((m) => chip(m)).join('')}</div></div>`, (t) => {
       const b = S.overview[1] - 0.3;
@@ -645,7 +647,7 @@
   {
     const root = addScene(S.always, `<div class="scene" id="always"><div class="a bg"></div><div class="a flash"></div>
       <div class="a big"><div><span class="v">0</span><span class="u">일</span></div><div class="dot">·</div><div><span class="v">0</span><span class="u">시간</span></div></div>
-      <div class="a s">멈추지 않는 현장, Philips ${D.region} 엔지니어</div><div class="a s2">오늘도 대전과 광주의 병원을 지키고 있습니다.</div></div>`, (t) => {
+      <div class="a s">멈추지 않는 현장, Philips ${REGION} 엔지니어</div><div class="a s2">오늘도 대전과 광주의 병원을 지키고 있습니다.</div></div>`, (t) => {
       const [a, b] = S.always;
       root.style.opacity = env(t, a, b, 0.4, 0.5).toFixed(3);
       const im = CUE.impact;
@@ -667,11 +669,11 @@
       return `<div class="panel" style="left:${x}px"><div class="ph"><b>${o.name}</b><span>${o.building}</span></div><div class="pg" style="width:${(all.length > 8 ? 5 : 4) * 146 + ((all.length > 8 ? 5 : 4) - 1) * 10}px">${all.map((p) => `<div class="mini" style="--c:${MOD[p.mod].color}">${avatar(p.nm, MOD[p.mod].color, 92)}<div class="mn">${p.nm}</div><div class="mr">${MOD[p.mod].name.toUpperCase()}</div></div>`).join('')}</div></div>`;
     };
     const root = addScene(S.outro, `<div class="scene" id="outro"><div class="a bg"></div><div class="a sun"></div>
-      <div class="a hd"><div class="k">PHILIPS ${D.region.toUpperCase()} ENGINEERS</div><div class="t">대전 · 광주 사무소</div></div>
+      <div class="a hd"><div class="k">PHILIPS ${REGION_UP} ENGINEERS</div><div class="t">대전 · 광주 사무소</div></div>
       <div class="a ld"><div class="ldin">${avatar(D.leader.name, '#0B5ED7', 96)}<div><div class="n">${D.leader.name}<span>${D.leader.title}</span></div><div class="r">${D.leader.role}</div></div></div></div>
       ${panel(OFF.dj, 110)}${panel(OFF.gj, 980)}
-      <div class="a tag">환자 곁의 장비가 멈추지 않도록,<br>오늘도 현장을 지키는 사람들 — <b>우리가 Philips ${D.region}입니다.</b></div>
-      <div class="a fin"><div class="wm">PHILIPS</div><div class="ln"></div><div class="s"><span>${D.region}</span>대전사무소 &amp; 광주사무소</div><div class="th">함께 일하는 동료들을 응원해 주세요!</div></div></div>`, (t) => {
+      <div class="a tag">환자 곁의 장비가 멈추지 않도록,<br>오늘도 현장을 지키는 사람들 — <b>우리가 Philips ${REGION}입니다.</b></div>
+      <div class="a fin"><div class="wm">PHILIPS</div><div class="ln"></div><div class="s"><span>${REGION}</span>대전사무소 &amp; 광주사무소</div><div class="th">함께 일하는 동료들을 응원해 주세요!</div></div></div>`, (t) => {
       const [a, b] = S.outro;
       root.style.opacity = env(t, a, b + 1, 0.8, 0.1).toFixed(3);
       tf($('.sun', root), 0, 120 * (1 - E.outCubic(seg(t, a, a + 8))), 1, 0.4 + 0.6 * seg(t, a, a + 7));

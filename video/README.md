@@ -1,8 +1,8 @@
-# Philips South 대전 · 광주 사무소 엔지니어 소개 영상
+# Philips CC&J 대전 · 광주 사무소 엔지니어 소개 영상
 
-필립스 직원들에게 South 지사의 대전사무소와 광주사무소 엔지니어를 소개하는 약 3분(1920×1080, 30fps) 길이의 영상입니다.
+필립스 직원들에게 CC&J 지사의 대전사무소와 광주사무소 엔지니어를 소개하는 약 3분(1920×1080, 30fps) 길이의 영상입니다.
 
-완성본: `output/philips_south_engineers.mp4`
+완성본: `output/philips_ccj_engineers.mp4`
 
 ## 구성 (타임라인)
 
